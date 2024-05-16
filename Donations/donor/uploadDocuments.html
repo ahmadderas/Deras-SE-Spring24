@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Documents</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="document-upload-container">
+        <h2>Upload Verification Documents</h2>
+        <form id="uploadDocumentsForm" onsubmit="uploadDocuments(event)">
+            <label for="documents">Upload Documents</label>
+            <input type="file" id="documents" name="documents" multiple required>
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+    <script src="uploadDocuments.js"></script>
+</body>
+</html>

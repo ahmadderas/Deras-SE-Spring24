@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject and Class Selection</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="subject-selection-container">
+        <h2>Specify Subjects and Classes</h2>
+        <form id="subjectSelectionForm" onsubmit="selectSubjects(event)">
+            <label for="subjects">Subjects</label>
+            <input type="text" id="subjects" name="subjects" required>
+            <label for="proBonoClasses">Pro-Bono Classes</label>
+            <input type="number" id="proBonoClasses" name="proBonoClasses" required>
+            <label for="proBonoStudents">Pro-Bono Students</label>
+            <input type="number" id="proBonoStudents" name="proBonoStudents" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="subjectSelection.js"></script>
+</body>
+</html>

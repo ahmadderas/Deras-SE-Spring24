@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cases</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="cases-container">
+        <h2>Cases</h2>
+        <form id="caseTypeForm" onsubmit="searchCases(event)">
+            <label for="caseType">Search by Case Type</label>
+            <select id="caseType" name="caseType" required>
+                <option value="all">All</option>
+                <option value="teaching">Teaching</option>
+                <option value="medical">Medical</option>
+            </select>
+            <button type="submit">Search</button>
+        </form>
+
+        <div id="teachingFilterForm" style="display:none;">
+            <form id="filterTeachingForm" onsubmit="filterTeachingCases(event)">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject">
+
+                <label for="teachingArea">Area</label>
+                <input type="text" id="teachingArea" name="teachingArea">
+
+                <label for="teachingGovernorate">Governorate</label>
+                <input type="text" id="teachingGovernorate" name="teachingGovernorate">
+
+                <button type="submit">Filter</button>
+            </form>
+        </div>
+
+        <div id="medicalFilterForm" style="display:none;">
+            <form id="filterMedicalForm" onsubmit="filterMedicalCases(event)">
+                <label for="specialty">Medical Specialty</label>
+                <input type="text" id="specialty" name="specialty">
+
+                <label for="organizationName">Organization Name</label>
+                <input type="text" id="organizationName" name="organizationName">
+
+                <label for="medicalArea">Area</label>
+                <input type="text" id="medicalArea" name="medicalArea">
+
+                <label for="medicalGovernorate">Governorate</label>
+                <input type="text" id="medicalGovernorate" name="medicalGovernorate">
+
+                <button type="submit">Filter</button>
+            </form>
+        </div>
+
+        <div id="results"></div>
+    </div>
+    <script src="cases.js"></script>
+</body>
+</html>

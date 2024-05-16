@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transportation</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="transportation-container">
+        <h2>Schedule Transportation for Donation Items</h2>
+        <div id="itemsList"></div>
+        <div id="transportationFormContainer" style="display:none;">
+            <form id="transportationForm" onsubmit="handleTransportation(event)">
+                <h3>Schedule Transportation</h3>
+                <label for="transportationType">Select Transportation Type</label>
+                <select id="transportationType" name="transportationType" required>
+                    <option value="truck">Truck</option>
+                    <option value="car">Car</option>
+                    <option value="motorcycle">Motorcycle</option>
+                </select>
+
+                <label for="pickupTime">Select Pickup Time Slot</label>
+                <input type="datetime-local" id="pickupTime" name="pickupTime" required>
+
+                <label for="dropoffTime">Select Drop-off Time Slot</label>
+                <input type="datetime-local" id="dropoffTime" name="dropoffTime" required>
+
+                <input type="hidden" id="currentItem" name="currentItem">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div id="eta" style="display:none;">
+            <h3>Estimated Time of Arrival</h3>
+            <p id="etaDetails"></p>
+        </div>
+
+        <div id="notification" style="display:none;">
+            <h3>Driver Arrival Notification</h3>
+            <p id="notificationDetails">The driver has arrived for pickup/drop-off.</p>
+        </div>
+    </div>
+    <script src="transportation.js"></script>
+</body>
+</html>

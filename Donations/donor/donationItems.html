@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Items</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="donation-items-container">
+        <h2>Donation Items</h2>
+        <form id="categoryForm" onsubmit="searchItems(event)">
+            <label for="category">Search by Category</label>
+            <select id="category" name="category" required>
+                <option value="all">All</option>
+                <option value="clothes">Clothes</option>
+                <option value="schoolSupplies">School Supplies</option>
+                <option value="toys">Toys</option>
+                <option value="food">Food</option>
+                <option value="medicalSupplies">Medical Supplies</option>
+                <option value="bloodDonations">Blood Donations</option>
+            </select>
+            <button type="submit">Search</button>
+        </form>
+
+        <div id="clothesFilterForm" style="display:none;">
+            <form id="filterClothesForm" onsubmit="filterClothes(event)">
+                <label for="age">Age</label>
+                <select id="age" name="age">
+                    <option value="all">All</option>
+                    <option value="child">Child</option>
+                    <option value="adult">Adult</option>
+                </select>
+
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender">
+                    <option value="all">All</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+
+                <label for="season">Season</label>
+                <select id="season" name="season">
+                    <option value="all">All</option>
+                    <option value="summer">Summer</option>
+                    <option value="winter">Winter</option>
+                </select>
+
+                <button type="submit">Filter</button>
+            </form>
+        </div>
+
+        <div id="schoolSuppliesFilterForm" style="display:none;">
+            <form id="filterSchoolSuppliesForm" onsubmit="filterSchoolSupplies(event)">
+                <label for="type">Type</label>
+                <select id="type" name="type">
+                    <option value="all">All</option>
+                    <option value="books">Books</option>
+                    <option value="stationary">Stationary</option>
+                </select>
+
+                <button type="submit">Filter</button>
+            </form>
+        </div>
+
+        <div id="toysFilterForm" style="display:none;">
+            <form id="filterToysForm" onsubmit="filterToys(event)">
+                <label for="toyAge">Age</label>
+                <select id="toyAge" name="toyAge">
+                    <option value="all">All</option>
+                    <option value="child">Child</option>
+                    <option value="adult">Adult</option>
+                </select>
+
+                <label for="toyGender">Gender</label>
+                <select id="toyGender" name="toyGender">
+                    <option value="all">All</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+
+                <label for="toyCategory">Category</label>
+                <select id="toyCategory" name="toyCategory">
+                    <option value="all">All</option>
+                    <option value="boardGames">Board Games</option>
+                    <option value="stuffedToys">Stuffed Toys</option>
+                    <option value="dolls">Dolls</option>
+                    <option value="sports">Sports</option>
+                    <option value="cars">Cars</option>
+                    <option value="outdoor">Outdoor</option>
+                </select>
+
+                <button type="submit">Filter</button>
+            </form>
+        </div>
+
+        <div id="foodFilterForm" style="display:none;">
+            <p>Note: Quantity entered for fruits and vegetables in KG</p>
+            <form id="filterFoodForm" onsubmit="filterFood(event)">
+                <label for="foodType">Type</label>
+                <select id="foodType" name="foodType">
+                    <option value="all">All</option>
+                    <option value="fruitsVegetables">Fruits and Vegetables</option>
+                    <option value="cannedFoods">Canned Foods</option>
+                    <option value="freshMeals">Fresh Meals</option>
+                    <option value="bakedGoods">Baked Goods</option>
+                </select>
+
+                <button type="submit">Filter</button>
+            </form>
+        </div>
+
+        <div id="medicalSuppliesFilterForm" style="display:none;">
+            <form id="filterMedicalSuppliesForm" onsubmit="filterMedicalSupplies(event)">
+                <label for="medicalType">Type</label>
+                <select id="medicalType" name="medicalType">
+                    <option value="all">All</option>
+                    <option value="devices">Medical Devices</option>
+                    <option value="equipment">Medical Equipment</option>
+                    <option value="medication">Medication</option>
+                </select>
+
+                <button type="submit">Filter</button>
+            </form>
+        </div>
+
+        <div id="bloodDonationsFilterForm" style="display:none;">
+            <form id="filterBloodDonationsForm" onsubmit="filterBloodDonations(event)">
+                <label for="hospital">Hospital</label>
+                <input type="text" id="hospital" name="hospital">
+
+                <label for="governorate">Governorate</label>
+                <input type="text" id="governorate" name="governorate">
+
+                <label for="area">Area</label>
+                <input type="text" id="area" name="area">
+
+                <button type="submit">Filter</button>
+            </form>
+        </div>
+
+        <div id="results"></div>
+    </div>
+    <script src="donationItems.js"></script>
+</body>
+</html>
